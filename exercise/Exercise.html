@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestellApp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            height: 50vh;
+            overflow: auto;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .code {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: "Courier New", Courier, monospace;
+            white-space: pre-wrap;
+            margin-bottom: 20px;
+        }
+
+        .tip {
+            background-color: #fdfd96;
+            border-left: 5px solid #f39c12;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .subheading {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Warenkorb Menü hinzufügen</h1>
+
+    <input minlength="1" id="menu" placeholder="Füge ein neues Menü hinzu"><br>
+    <input min="0" value="0" type="number" id="price" placeholder="Füge eine neue Prise hinzu"><br>
+    <button onclick="onAddMenu()">Menü hinzufügen</button>
+
+
+    <section>
+        <p>In dieser Challenge lernst du den einfachsten Weg, um Waren zu einem Warenkorb hinzuzufügen. Hierfür
+            erstellen wir 3 verschiedene Container für den Namen, den Preis und die Menge der Ware. Diese Container
+            werden nun mithilfe unseres Codes befüllt.</p>
+
+        <div class="subheading">1. Erstelle ein Array namens menus.</div>
+        <p>Array <code>menus</code> wird die Essennamen von Menüs in unseren Warenkorb enthalten.</p>
+        <div class="tip">Tipp: Bitte definiere Variablen immer ganz oben in deinem Script. Die Definitionsreihenfolge
+            ist hier egal.</div>
+
+        <div class="subheading">2. Erstelle ein Array namens prices.</div>
+        <p>Array <code>prices</code> wird die Prise von Menüs in unseren Warenkorb enthalten.</p>
+        <div class="tip">Tipp: Bitte definiere Variablen immer ganz oben in deinem Script. Die Definitionsreihenfolge
+            ist hier egal.</div>
+
+        <div class="subheading">3. Erstelle ein Array namens amounts.</div>
+        <p>Array <code>amounts</code> wird die Menge von Menüs in unseren Warenkorb enthalten.</p>
+        <div class="tip">Tipp: Bitte definiere Variablen immer ganz oben in deinem Script. Die Definitionsreihenfolge
+            ist hier egal.</div>
+
+        <div class="subheading">4. Füge den Arrays Werte hinzu.</div>
+        <p>Füge dem Array <code>menus</code> Essennamen hinzu. Die Namen sollen vom Datentyp string sein und dürfen
+            keine leeren Zeichen am Anfang und Schluss des Names enthalten. Z.B.: <code>"Pizza Salami"</code> und nicht
+            <code>" Pizza Salami "</code>.
+        </p>
+
+        <p>Füge dem Array <code>prices</code> Nummern hinzu. Die Nummern sollen vom Datentyp number sein und dürfen
+            Kommazahlen sein. Z.B.: <code>1.99</code> oder <code>2.0</code> und nicht <code>"1.99"</code>.</p>
+
+        <p>Füge dem Array <code>amounts</code> ganze Zahlen hinzu. Die Zahlen sollen vom Datentyp number sein (Keine
+            Kommazahlen!). Z.B.: <code>1</code> oder <code>10</code> und nicht <code>"1"</code> oder <code>1.5</code>.
+        </p>
+
+        <div class="tip">Tipp: Achte darauf, dass alle drei Arrays die gleiche Länge haben.</div>
+
+        <div class="subheading">5. Erstelle eine Hilfsfunktion namens getValueFromInput</div>
+        <p>Erstelle eine Hilfsfunktion namens <code>getValueFromInput</code>, welche dir den Wert von einem beliebigen
+            Input Feld zurückgibt.
+            Die Funktion <code>getValueFromInput</code> sollte einen Parameter haben, welcher der ID von einem Input
+            Feld entspricht.</p>
+
+        <div class="subheading">6. Erstelle eine Hilfsfunktion namens getMenuFromInput</div>
+        <p>Erstelle eine Hilfsfunktion namens <code>getMenuFromInput</code>, welche den Wert von dem Input Feld mit der
+            ID <code>menu</code> validiert und zurückgibt.
+            Dem Wert sollten alle leeren Zeichen am Anfang und am Ende entfernt werden.</p>
+        <div class="tip">
+            Tipp:
+            <ul>
+                <li>Nutze die Hilfsfunktion <code>getValueFromInput</code>, um die Werte von den Input-Feldern
+                    auszulesen.</li>
+                <li>Versuche auch das Internet für die Lösung des Problems zu verwenden.</li>
+                <li>Nutze Stichworte beim Suchen, um genau dein Problem zu beschreiben.</li>
+                <li>Beispiel: "Javascript, String, Remove empty spaces from both sides"</li>
+            </ul>
+        </div>
+
+        <div class="subheading">7. Erstelle eine Hilfsfunktion namens getPriceFromInput</div>
+        <p>Erstelle eine Hilfsfunktion namens <code>getPriceFromInput</code>, welche den Wert von dem Input Feld mit der
+            ID <code>price</code> validiert und zurückgibt.
+            Der Wert sollte vom Datentyp number sein.</p>
+        <div class="tip">
+            Tipp:
+            <ul>
+                <li>Nutze die Hilfsfunktion <code>getValueFromInput</code>, um die Werte des Input Felds herauszulesen.
+                </li>
+                <li>Versuche im Internet Lösungen zu finden für deine Probleme.</li>
+                <li>Nutze Stichworte, um genau dein Problem zu beschreiben.</li>
+                <li>Beispiel: "javascript string convert to number"</li>
+            </ul>
+        </div>
+
+        <div class="subheading">8. Erstelle eine Funktion für den Button Menü hinzufügen</div>
+        <p>Erstelle eine Funktion, welche vom Button <code>Menü hinzufügen</code> per Klick aufgerufen wird.</p>
+        <div class="tip">
+            Tipp:
+            Untersuche den Button mit den Developer Tools vom Browser, um den Funktionsnamen herauszufinden der dort bereits existiert.
+
+        </div>
+
+        <div class="subheading">9. Erweitere die Funktion onAddMenu</div>
+        <p>Erweitere die Funktion <code>onAddMenu</code>, sodass der Inhalt der Input-Felder am Ende der Arrays
+            <code>menus</code> und <code>prices</code> hinzugefügt werden. Auch am Ende des Arrays <code>amounts</code>
+            sollte eine <code>1</code> hinzugefügt werden.
+        </p>
+        <div class="tip">
+            Tipp:
+            Nutze die Hilfsfunktionen <code>getMenuFromInput</code> und <code>getPriceFromInput</code>, um die
+            Werte von Input-Feldern herauszulesen.
+        </div>
+
+        <div class="subheading">10. Erstelle eine Hilfsfunktion namens getMenuIndex</div>
+        <p>Erstelle eine Hilfsfunktion namens <code>getMenuIndex</code>, welche einen Parameter namens <code>menu</code>
+            hat. Das Ergebnis der Funktion ist der Index, wo sich der Parameter <code>menu</code> in dem Array
+            <code>menus</code> befindet. Gebe <code>-1</code> zurück, wenn das Ergebnis nicht gefunden werden kann.
+        </p>
+        <div class="tip">
+            Tipp:
+            <ul>
+                <li>Versuche im Internet Lösungen zu finden für deine Probleme.</li>
+                <li>Nutze Stichworte beim Suchen, um genau dein Problem zu beschreiben.</li>
+                <li>Beispiel: "Javascript index of element in array"</li>
+            </ul>
+        </div>
+
+        <div class="subheading">11. Ändere die Funktion onAddMenu</div>
+        <p>Ändere die Funktion <code>onAddMenu</code> so, dass die Werte nur hizugefügt werden, wenn der Wert des Input
+            Felds mit der ID <code>menu</code> sich noch nicht in dem Array <code>menus</code> befindet. Andernfalls,
+            wenn der Wert sich in Array <code>menus</code> befindet, dann finde die Index-Stelle und erhöhe den Wert in
+            Array <code>amounts</code> in dieser Stelle um <code>1</code>.</p>
+        <div class="tip">
+            Tipp:
+            <ul>
+                Nutze die Hilfsfunktion <code>getMenuIndex</code>, um zu überprüfen, ob das Menü sich bereits in dem
+                Array <code>menus</code> befindet.
+        </div>
+    </section>
+
+
+</body>
+<script src="exScript.js"></script>
+</html>

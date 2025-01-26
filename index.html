@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestellApp</title>
+    <link rel="shortcut icon" href="img/Favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="renderMenu()">
+    <header>
+        <img class="logoImg" src="img/Logo/Logo.png" alt="Logo">
+    </header>
+    <main>
+        <section class="content">
+            <img class="foodImg" src="img/indianFood.jpeg" alt="">
+            <div class="foodContent">
+                <h1>Badshah Restaurant</h1>
+                <p class="rating">Bewertung (4,8 von 5 Sternen)</p>
+                <h3 class="mainDishesHeadline">Hauptgerichte</h3>
+                <div id="menus"></div>
+            </div>
+        </section>
+        <section class="basketWrapper">
+            <div class="basket">
+                <h2 class="basketHeadline">Warenkorb</h2>
+                <div class="orderedFood" id="orderedFood">
+                    <h4>Butter Chicken</h4>
+                    <div class="amountSection">
+                        <p>1x</p>
+                        <p>100€</p>
+                    </div>
+                    <div class="buttonSection">
+                        <button class="basketButton">-</button>
+                        <button class="basketButton">+</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+<script src="script.js" defer></script>
+<script src="db.js" defer></script>
+</html>
