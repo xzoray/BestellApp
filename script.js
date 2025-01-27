@@ -21,14 +21,13 @@ function TemplateMenuCard(i) {
 
 function addToBasket(i) {
     let food = myDishes[i].name;
-    let amount = myDishes[i].amount;
     let foodIndex = getIndex(food);
     if (foodIndex == -1) {
         foods.unshift(food);
-        amount++;
+        myDishes[i].amount++;
         document.getElementById("orderedFood").innerHTML += basketTemplate(i);
     } else {
-        amount++;
+        document.getElementById("amount").innerHTML++;
     }
 }
 
