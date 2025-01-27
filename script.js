@@ -1,10 +1,5 @@
 let foods = [];
 
-let prices = [];
-
-let amounts = [];
-
-
 function renderMenu() {
     let menuCard = document.getElementById("menus");
     menuCard.innerHTML = "";
@@ -25,23 +20,27 @@ function TemplateMenuCard(i) {
 }
 
 function addToBasket(i) {
-    document.getElementById("orderedFood").innerHTML += basketTemplate(i);
     let food = myDishes[i].name;
-    foods.unshift(food);
-    let price = myDishes[i].price;
-    prices.unshift(price);
-    let amount = myDishes[i].amount++;
-    amounts.unshift(amount);
-    console.log(foods);
-    console.log(prices);
-    console.log(amounts);
+    let amount = myDishes[i].amount;
+    let foodIndex = getIndex(food);
+    if (foodIndex == -1) {
+        foods.unshift(food);
+        amount++;
+        document.getElementById("orderedFood").innerHTML += basketTemplate(i);
+    } else {
+        amount++;
+    }
+}
+
+function getIndex(foodInput) {
+    return foods.indexOf(foodInput);
 }
 
 function basketTemplate(i) {
     return `<div class="orderedFood" >
                 <h4>${myDishes[i].name}</h4>
                 <div class="amountSection">
-                    <p>${myDishes[i].amount}x</p>
+                    <p id="amount">${myDishes[i].amount}x</p>
                     <p>${myDishes[i].price.toFixed(2)} €</p>
                 </div>
                 <div class="buttonSection">
@@ -50,6 +49,3 @@ function basketTemplate(i) {
                 </div>  
             </div>`
 }
-
-
-
