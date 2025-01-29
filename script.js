@@ -27,10 +27,10 @@ function addToBasket(i) {
     let foodIndex = getIndex(myDishes[i].name);
     if (foodIndex == -1) {
         pushToBasket(i);
-        renderBasket(i);
+        renderBasket();
     } else {
-        amounts[i]++;
-        renderBasket(i)
+        amounts[foodIndex]++;
+        renderBasket();
     }
     console.log(foods);
     console.log(amounts);
@@ -58,15 +58,31 @@ function renderBasket() {
 }
 
 function basketTemplate(j) {
-    return `<div class="orderedFood" >
+    return `<div class="renderedFood" id="renderedFood${j}" >
                 <h4>${foods[j]}</h4>
                 <div class="amountSection">
                     <p id="amount">${amounts[j]}x</p>
                     <p>${prices[j].toFixed(2)} €</p>
                 </div>
                 <div class="buttonSection">
-                    <button class="basketButton">-</button>
-                    <button class="basketButton">+</button>
+                    <button onclick="decreaseAmount(${j})" class="basketButton">-</button>
+                    <button onclick="increaseAmount(${j})" class="basketButton">+</button>
                 </div>  
             </div>`
+}
+
+function increaseAmount(j) {
+    amounts[j]++;
+    renderBasket();
+}
+
+function decreaseAmount(j) {
+    amounts[j]--;
+    renderBasket();
+    if (amounts[j] <= 0) {
+        foods.splice[j, 1];
+        prices.splice[j, 1];
+        amounts.splice[j, 1];
+        console.log(foods);
+    }
 }

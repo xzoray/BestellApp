@@ -138,7 +138,7 @@ p {
     text-align: center;
 }
 
-.orderedFood {
+.renderedFood {
     background-color: rgb(182, 255, 149);
     padding: 5px;
     border: 2px solid gray;
@@ -167,6 +167,11 @@ p {
 
 .basketButton:hover {
     scale: 1.3;
+}
+
+.totalResult {
+    display: flex;
+    justify-content: space-between;
 }
 
 footer {
