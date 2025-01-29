@@ -75,6 +75,14 @@ p {
     object-fit: cover;
 }
 
+.lotusImg {
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: -35px;
+}
+
 #menuCard {
     background-color: rgba(128, 128, 128, 0.24);
     margin-top: 10px;
