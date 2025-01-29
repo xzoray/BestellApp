@@ -48,9 +48,3 @@ let myDishes = [
       "amount": 1
     }
 ];
-
-let foods = [];
-
-let amounts = [];
-
-let prices = [];

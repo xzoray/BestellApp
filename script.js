@@ -1,3 +1,9 @@
+let foods = [];
+
+let amounts = [];
+
+let prices = [];
+
 function renderMenu() {
     let menuCard = document.getElementById("menus");
     menuCard.innerHTML = "";
@@ -28,7 +34,6 @@ function addToBasket(i) {
     }
     console.log(foods);
     console.log(amounts);
-    
 }
 
 function getIndex(foodInput) {
@@ -44,17 +49,20 @@ function pushToBasket(i) {
     prices.push(price)
 }
 
-function renderBasket(i) {
+function renderBasket() {
     let basket = document.getElementById("orderedFood");
-    basket.innerHTML += basketTemplate(i);
+    basket.innerHTML = "";
+    for (let j = 0; j < foods.length; j++) {
+        basket.innerHTML += basketTemplate(j);
+    }
 }
 
-function basketTemplate(i) {
+function basketTemplate(j) {
     return `<div class="orderedFood" >
-                <h4>${foods[i]}</h4>
+                <h4>${foods[j]}</h4>
                 <div class="amountSection">
-                    <p id="amount">${amounts[i]}x</p>
-                    <p>${prices[i].toFixed(2)} €</p>
+                    <p id="amount">${amounts[j]}x</p>
+                    <p>${prices[j].toFixed(2)} €</p>
                 </div>
                 <div class="buttonSection">
                     <button class="basketButton">-</button>
