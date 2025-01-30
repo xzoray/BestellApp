@@ -77,12 +77,12 @@ function increaseAmount(j) {
 }
 
 function decreaseAmount(j) {
-    amounts[j]--;
-    renderBasket();
-    if (amounts[j] <= 0) {
-        foods.splice[j, 1];
-        prices.splice[j, 1];
-        amounts.splice[j, 1];
-        console.log(foods);
+    if (amounts[j] > 1) {
+        amounts[j]--;
+    } else {
+        foods.splice(j, 1);
+        prices.splice(j, 1);
+        amounts.splice(j, 1);
     }
-}
+    renderBasket();
+ }
