@@ -30,10 +30,10 @@ function addToBasket(i) {
         renderBasket();
     } else {
         amounts[foodIndex]++;
+        prices[foodIndex] += prices[foodIndex];
         renderBasket();
     }
-    console.log(foods);
-    console.log(amounts);
+
 }
 
 function getIndex(foodInput) {
@@ -51,9 +51,12 @@ function pushToBasket(i) {
 
 function renderBasket() {
     let basket = document.getElementById("orderedFood");
+    let result = document.getElementById("totalResult");
     basket.innerHTML = "";
+    result.innerHTML = "";
     for (let j = 0; j < foods.length; j++) {
         basket.innerHTML += basketTemplate(j);
+        result.innerHTML = calcResult(result, j);
     }
 }
 
@@ -73,16 +76,22 @@ function basketTemplate(j) {
 
 function increaseAmount(j) {
     amounts[j]++;
+    prices[j] += prices[j];
     renderBasket();
 }
 
 function decreaseAmount(j) {
     if (amounts[j] > 1) {
         amounts[j]--;
+        prices[j] -= prices[j];
     } else {
         foods.splice(j, 1);
         prices.splice(j, 1);
         amounts.splice(j, 1);
     }
     renderBasket();
- }
+}
+
+function calcResult(j) {
+    
+}

@@ -169,7 +169,7 @@ p {
     scale: 1.3;
 }
 
-.totalResult {
+.sumUpResult {
     display: flex;
     justify-content: space-between;
 }
