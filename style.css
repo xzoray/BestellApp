@@ -178,5 +178,19 @@ footer {
     height: 80px;
     width: 100%;
     background-color: rgb(31, 184, 0);
+    color: white;
     margin-top: 10px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 580px) {
+    .basketWrapper {
+        display: none;
+    }
+    .content {
+        width: 100% ;
+    }
 }
