@@ -27,13 +27,10 @@ function addToBasket(i) {
     let foodIndex = getIndex(myDishes[i].name);
     if (foodIndex == -1) {
         pushToBasket(i);
-        renderBasket();
     } else {
         amounts[foodIndex]++;
-        prices[foodIndex] += prices[foodIndex];
-        renderBasket();
     }
-
+    renderBasket();
 }
 
 function getIndex(foodInput) {
@@ -51,13 +48,11 @@ function pushToBasket(i) {
 
 function renderBasket() {
     let basket = document.getElementById("orderedFood");
-    let result = document.getElementById("totalResult");
     basket.innerHTML = "";
-    result.innerHTML = "";
     for (let j = 0; j < foods.length; j++) {
         basket.innerHTML += basketTemplate(j);
-        result.innerHTML = calcResult(result, j);
     }
+    calcResult();
 }
 
 function basketTemplate(j) {
@@ -65,7 +60,7 @@ function basketTemplate(j) {
                 <h4>${foods[j]}</h4>
                 <div class="amountSection">
                     <p id="amount">${amounts[j]}x</p>
-                    <p>${prices[j].toFixed(2)} €</p>
+                    <p id="priceBasket${j}">${(prices[j] * amounts[j]).toFixed(2).replace(".",",")} €</p>
                 </div>
                 <div class="buttonSection">
                     <button onclick="decreaseAmount(${j})" class="basketButton">-</button>
@@ -76,14 +71,12 @@ function basketTemplate(j) {
 
 function increaseAmount(j) {
     amounts[j]++;
-    prices[j] += prices[j];
     renderBasket();
 }
 
 function decreaseAmount(j) {
     if (amounts[j] > 1) {
         amounts[j]--;
-        prices[j] -= prices[j];
     } else {
         foods.splice(j, 1);
         prices.splice(j, 1);
@@ -92,6 +85,12 @@ function decreaseAmount(j) {
     renderBasket();
 }
 
-function calcResult(j) {
-    
+function calcResult() {
+    let totalResult = document.getElementById("totalResult");
+    totalResult.innerHTML = "";
+    let result = 0;
+    for (let k = 0; k < foods.length; k++) {
+        result += prices[k] * amounts[k];
+    }
+    totalResult.innerHTML = `${result.toFixed(2).replace(".",",")} €`;
 }
