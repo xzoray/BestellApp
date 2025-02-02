@@ -174,6 +174,47 @@ p {
     justify-content: space-between;
 }
 
+.orderBtnContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.orderButtonBasket {
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px;
+    background-color: rgb(31, 184, 0);
+}
+
+.orderButtonBasket:hover {
+    background-color: rgb(0, 142, 0);
+}
+
+.contentBtnContainer {
+    display: none;
+}
+
+.orderButtonContent {
+    width: 200px;
+    height: 60px;
+    cursor: pointer;
+    color: white;
+    border-radius: 40px;
+    background-color: rgb(31, 184, 0);
+    font-size: 30px;
+}
+
+.orderButtonContent:hover {
+    background-color: rgb(0, 142, 0);
+}
+
+.hidden {
+    display: none;
+}
+
 footer {
     height: 80px;
     width: 100%;
@@ -186,11 +227,25 @@ footer {
     align-items: center;
 }
 
-@media (max-width: 580px) {
+@media (max-width: 715px) {
     .basketWrapper {
-        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
     }
+
+    .basketWrapper:not(.hidden) {
+        opacity: 1;
+    }
+
     .content {
         width: 100% ;
+    }
+
+    .contentBtnContainer {
+        position: fixed;
+        bottom: 50px;
+        display: block;
+        left: 50%;
+        transform: translate(-50%);
     }
 }

@@ -1,9 +1,3 @@
-let foods = [];
-
-let amounts = [];
-
-let prices = [];
-
 function renderMenu() {
     let menuCard = document.getElementById("menus");
     menuCard.innerHTML = "";
@@ -17,7 +11,7 @@ function TemplateMenuCard(i) {
                 <h4 id="name">${myDishes[i].name}</h4>
                 <p id="description">${myDishes[i].description}</p>
                 <div id="priceSection">
-                    <p id="price">${myDishes[i].price.toFixed(2)} €</p>
+                    <p id="price">${myDishes[i].price.toFixed(2).replace(".", ",")} €</p>
                     <button onclick="addToBasket(${i})" id="addButton">+</button>
                 </div>
             </div>`
@@ -60,7 +54,7 @@ function basketTemplate(j) {
                 <h4>${foods[j]}</h4>
                 <div class="amountSection">
                     <p id="amount">${amounts[j]}x</p>
-                    <p id="priceBasket${j}">${(prices[j] * amounts[j]).toFixed(2).replace(".",",")} €</p>
+                    <p id="priceBasket${j}">${(prices[j] * amounts[j]).toFixed(2).replace(".", ",")} €</p>
                 </div>
                 <div class="buttonSection">
                     <button onclick="decreaseAmount(${j})" class="basketButton">-</button>
@@ -92,5 +86,12 @@ function calcResult() {
     for (let k = 0; k < foods.length; k++) {
         result += prices[k] * amounts[k];
     }
-    totalResult.innerHTML = `${result.toFixed(2).replace(".",",")} €`;
+    totalResult.innerHTML = `${result.toFixed(2).replace(".", ",")} €`;
 }
+
+function toggleBasket() {
+    let basketWrapper = document.getElementById("basketWrapper");
+    basketWrapper.classList.toggle("hidden");
+}
+
+document.querySelector(".orderButtonContent").addEventListener("click", toggleBasket);
