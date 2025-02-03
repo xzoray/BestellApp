@@ -131,6 +131,12 @@ p {
     
 }
 
+.backToContent {
+    background: rgb(200, 10, 10);
+    color: white;
+    border-radius: 50%;
+}
+
 .basketHeadline {
     margin-block-start: 0;
     margin-block-end: 0.5rem;
@@ -204,7 +210,7 @@ p {
     color: white;
     border-radius: 40px;
     background-color: rgb(31, 184, 0);
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .orderButtonContent:hover {

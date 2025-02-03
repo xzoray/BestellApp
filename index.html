@@ -15,7 +15,7 @@
         <img class="logoImg" src="img/Logo/Logo.png" alt="Logo">
     </header>
     <main>
-        <section class="content">
+        <section id="content" class="content">
             <img class="foodImg" src="img/indianFood.jpeg" alt="">
             <img class="lotusImg" src="img/lotus-6474572_1280.jpg" alt="">
             <div class="foodContent">
@@ -24,12 +24,13 @@
                 <h3 class="mainDishesHeadline">Hauptgerichte</h3>
                 <div id="menus"></div>
                 <div class="contentBtnContainer">
-                    <button class="orderButtonContent">Warenkorb</button>
+                    <button onclick="toggleBasket()" id="orderButtonContent" class="orderButtonContent">Warenkorb</button>
                 </div>
             </div>
         </section>
-        <section class="basketWrapper" id="basketWrapper">
+        <section class="basketWrapper hidden" id="basketWrapper">
             <div class="basket">
+                <button onclick="toggleBasket()" class="backToContent">X</button>
                 <h2 class="basketHeadline">Warenkorb</h2>
                 <div id="orderedFood">
                     
@@ -39,7 +40,7 @@
                     <p id="totalResult"></p>
                 </div>
                 <div class="orderBtnContainer">
-                    <button class="orderButtonBasket" onclick="toogleBasket()">Bestellen</button>
+                    <button class="orderButtonBasket">Bestellen</button>
                 </div>
             </div>
         </section>

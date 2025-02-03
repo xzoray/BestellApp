@@ -81,17 +81,19 @@ function decreaseAmount(j) {
 
 function calcResult() {
     let totalResult = document.getElementById("totalResult");
+    let basketButton = document.getElementById("orderButtonContent")
     totalResult.innerHTML = "";
     let result = 0;
     for (let k = 0; k < foods.length; k++) {
         result += prices[k] * amounts[k];
     }
     totalResult.innerHTML = `${result.toFixed(2).replace(".", ",")} €`;
+    basketButton.innerHTML = `Warenkorb (${result.toFixed(2).replace(".", ",")})`
 }
 
 function toggleBasket() {
     let basketWrapper = document.getElementById("basketWrapper");
+    let content = document.getElementById("content")
     basketWrapper.classList.toggle("hidden");
+    content.classList.toggle("hidden");
 }
-
-document.querySelector(".orderButtonContent").addEventListener("click", toggleBasket);
