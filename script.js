@@ -97,3 +97,13 @@ function toggleBasket() {
     basketWrapper.classList.toggle("hidden");
     content.classList.toggle("hidden");
 }
+
+function orderFood() {
+    if(foods.length >= 1) {
+    foods = [];
+    amounts = [];
+    prices = [];
+    renderBasket();
+    alert("Bestellung ist unterwegs!")
+    }
+}
