@@ -88,14 +88,16 @@ function calcResult() {
         result += prices[k] * amounts[k];
     }
     totalResult.innerHTML = `${result.toFixed(2).replace(".", ",")} €`;
-    basketButton.innerHTML = `Warenkorb (${result.toFixed(2).replace(".", ",")})`
+    basketButton.innerHTML = `Warenkorb (${result.toFixed(2).replace(".", ",")}€)`
 }
 
 function toggleBasket() {
     let basketWrapper = document.getElementById("basketWrapper");
-    let content = document.getElementById("content")
+    let content = document.getElementById("content");
+    let respButton = document.getElementById("respButton");
     basketWrapper.classList.toggle("hidden");
     content.classList.toggle("hidden");
+    respButton.classList.toggle("d_none");
 }
 
 function orderFood() {
